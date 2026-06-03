@@ -1,0 +1,137 @@
+/* ============================================
+   LOVELY PETS – responsive.css
+   Svi media queries za mobilne i tablete
+   ============================================ */
+
+/* ── TABLET (max 1024px) ── */
+@media (max-width: 1024px) {
+
+  :root { --nav-h: 70px; }
+
+  /* Navbar */
+  .nav-links { gap: 1.4rem; }
+  .nav-links a { font-size: 0.82rem; }
+
+  /* Hero */
+  .hero { grid-template-columns: 1fr 1fr; }
+  .hero-left { padding: 5rem 2.5rem 5rem 5%; }
+  .hero-stats { gap: 1.8rem; }
+
+  /* Why grid */
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Services */
+  .services-grid { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+  /* BA */
+  .ba-grid { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; }
+
+  /* O nama */
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-image-col { max-width: 560px; margin: 0 auto; }
+
+  /* Galerija */
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Kontakt */
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ── MOBILE (max 768px) ── */
+@media (max-width: 768px) {
+
+  /* Navbar - sakrij desktop linkove, prikaži hamburger */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero - jedna kolona */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left {
+    padding: 5rem 5% 3.5rem;
+    order: 2;
+  }
+  .hero-right {
+    order: 1;
+    height: 55vw;
+    min-height: 260px;
+    max-height: 400px;
+    position: relative;
+  }
+  .hero-image-wrap { position: absolute; }
+  .hero-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+    white-space: nowrap;
+  }
+  .hero-stats { gap: 1.5rem; }
+  .hero-stat strong { font-size: 1.6rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Why grid */
+  .why-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Services */
+  .services-preview-header { flex-direction: column; align-items: flex-start; }
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* BA */
+  .ba-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+  /* Page header */
+  .page-header { padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 3rem; }
+
+  /* O nama */
+  .about-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid  { grid-template-columns: 1fr; }
+
+  /* Usluge */
+  .services-detail-grid { grid-template-columns: 1fr; }
+  .price-table { font-size: 0.85rem; }
+  .price-table th, .price-table td { padding: 0.75rem 0.8rem; }
+
+  /* Galerija */
+  .filter-bar { gap: 0.5rem; flex-wrap: wrap; }
+  .filter-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+
+  /* Kontakt */
+  .contact-grid { grid-template-columns: 1fr; }
+  .hours-table th,
+  .hours-table td { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+  .map-placeholder { height: 260px; }
+}
+
+/* ── SMALL MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.6rem; }
+
+  .hero-right { height: 65vw; }
+  .hero-badge { display: none; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+  .certs-grid   { grid-template-columns: 1fr; }
+
+  .ba-img { height: 160px; font-size: 3rem; }
+
+  .service-card-thumb { height: 160px; font-size: 3.5rem; }
+
+  .btn { padding: 0.75rem 1.5rem; }
+
+  footer { padding: 3rem 0 0; }
+}
